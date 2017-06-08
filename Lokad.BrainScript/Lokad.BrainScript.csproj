@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FE35A73-4BAF-4A14-92CC-5D167BA7E983}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lokad.BrainScript</RootNamespace>
+    <AssemblyName>Lokad.BrainScript</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ast\ArrayExpr.cs" />
+    <Compile Include="Ast\AtExpr.cs" />
+    <Compile Include="Ast\BinaryExpr.cs" />
+    <Compile Include="Ast\BinaryOp.cs" />
+    <Compile Include="Ast\CallExpr.cs" />
+    <Compile Include="Ast\FieldExpr.cs" />
+    <Compile Include="Ast\FuncAssign.cs" />
+    <Compile Include="Ast\IAssign.cs" />
+    <Compile Include="Ast\IdAssign.cs" />
+    <Compile Include="Ast\IdExpr.cs" />
+    <Compile Include="Ast\IExpr.cs" />
+    <Compile Include="Ast\IfExpr.cs" />
+    <Compile Include="Ast\LambdaExpr.cs" />
+    <Compile Include="Ast\LitExpr.cs" />
+    <Compile Include="ParserException.cs" />
+    <Compile Include="Prec.cs" />
+    <Compile Include="Ast\RecordExpr.cs" />
+    <Compile Include="Ast\TensorExpr.cs" />
+    <Compile Include="Ast\UnaryExpr.cs" />
+    <Compile Include="Ast\UnaryOp.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="Printer.cs" />
+    <Compile Include="Token.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TokenNamer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lokad.Syntax\Lokad.Syntax.csproj">
+      <Project>{96084ecb-d772-479b-bbb3-8c5f37ddcdc9}</Project>
+      <Name>Lokad.Syntax</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
